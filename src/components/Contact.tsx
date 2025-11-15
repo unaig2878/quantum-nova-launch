@@ -7,7 +7,7 @@ import { toast } from "sonner";
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent! We'll get back to you soon.");
+    toast.success("¡Mensaje enviado! Te responderemos pronto.");
   };
 
   return (
@@ -24,10 +24,10 @@ const Contact = () => {
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
-            Let's <span className="gradient-text">Connect</span>
+            Hablemos <span className="gradient-text">Contigo</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to transform your business? Get in touch with our team of experts.
+            ¿Listo para transformar tu negocio? Contacta con nuestro equipo de expertos.
           </p>
         </div>
 
@@ -37,12 +37,12 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium">
-                  Full Name
+                  Nombre Completo
                 </label>
                 <Input
                   id="name"
                   type="text"
-                  placeholder="John Doe"
+                  placeholder="Juan Pérez"
                   required
                   className="bg-background/50 border-border focus:border-primary transition-colors"
                 />
@@ -50,12 +50,12 @@ const Contact = () => {
 
               <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-medium">
-                  Email Address
+                  Correo Electrónico
                 </label>
                 <Input
                   id="email"
                   type="email"
-                  placeholder="john@example.com"
+                  placeholder="juan@ejemplo.com"
                   required
                   className="bg-background/50 border-border focus:border-primary transition-colors"
                 />
@@ -63,11 +63,11 @@ const Contact = () => {
 
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium">
-                  Message
+                  Mensaje
                 </label>
                 <Textarea
                   id="message"
-                  placeholder="Tell us about your project..."
+                  placeholder="Cuéntanos sobre tu proyecto..."
                   rows={5}
                   required
                   className="bg-background/50 border-border focus:border-primary transition-colors resize-none"
@@ -78,7 +78,7 @@ const Contact = () => {
                 type="submit"
                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow-effect text-lg py-6"
               >
-                Send Message
+                Enviar Mensaje
               </Button>
             </form>
           </div>
@@ -86,9 +86,9 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-8">
             <div className="glass-card rounded-2xl p-8 space-y-6">
-              <h3 className="text-2xl font-bold">Get in Touch</h3>
+              <h3 className="text-2xl font-bold">Ponte en Contacto</h3>
               <p className="text-muted-foreground">
-                We're here to help you achieve your digital transformation goals. Reach out today!
+                Estamos aquí para ayudarte a lograr tus objetivos de transformación digital. ¡Contáctanos hoy!
               </p>
 
               <div className="space-y-4">
@@ -99,10 +99,10 @@ const Contact = () => {
                   <div>
                     <div className="font-medium mb-1">Email</div>
                     <a
-                      href="mailto:hello@quantumnova.tech"
+                      href="mailto:contacto@quantumnova.com"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      hello@quantumnova.tech
+                      contacto@quantumnova.com
                     </a>
                   </div>
                 </div>
@@ -112,12 +112,12 @@ const Contact = () => {
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <div className="font-medium mb-1">Phone</div>
+                    <div className="font-medium mb-1">Teléfono</div>
                     <a
-                      href="tel:+1234567890"
+                      href="tel:+34555123456"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      +1 (234) 567-890
+                      +34 (555) 123-456
                     </a>
                   </div>
                 </div>
@@ -127,11 +127,11 @@ const Contact = () => {
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <div className="font-medium mb-1">Location</div>
+                    <div className="font-medium mb-1">Ubicación</div>
                     <p className="text-muted-foreground">
-                      San Francisco, CA
+                      Madrid, España
                       <br />
-                      United States
+                      Calle Tecnología 123
                     </p>
                   </div>
                 </div>

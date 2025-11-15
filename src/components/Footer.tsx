@@ -9,32 +9,32 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-2xl font-bold gradient-text">Quantum Nova</h3>
             <p className="text-muted-foreground text-sm">
-              Transforming businesses with cutting-edge automation and AI solutions.
+              Transformando negocios con automatización de vanguardia y soluciones de IA.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <h4 className="font-semibold mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">
-                  Services
+                  Servicios
                 </a>
               </li>
               <li>
                 <a href="#features" className="text-muted-foreground hover:text-primary transition-colors">
-                  Features
+                  Impacto
                 </a>
               </li>
               <li>
-                <a href="#technology" className="text-muted-foreground hover:text-primary transition-colors">
-                  Technology
+                <a href="#automation" className="text-muted-foreground hover:text-primary transition-colors">
+                  Automatización
                 </a>
               </li>
               <li>
                 <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
-                  Contact
+                  Contacto
                 </a>
               </li>
             </ul>
@@ -42,18 +42,18 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
+            <h4 className="font-semibold mb-4">Servicios</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Business Automation</li>
-              <li>AI Solutions</li>
-              <li>Web Development</li>
-              <li>Digital Strategy</li>
+              <li>Automatización de Procesos</li>
+              <li>Soluciones de IA</li>
+              <li>Desarrollo Web</li>
+              <li>Estrategia Digital</li>
             </ul>
           </div>
 
           {/* Social */}
           <div>
-            <h4 className="font-semibold mb-4">Connect</h4>
+            <h4 className="font-semibold mb-4">Conecta</h4>
             <div className="flex gap-4">
               <a
                 href="#"
@@ -79,7 +79,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Quantum Nova. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Quantum Nova. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

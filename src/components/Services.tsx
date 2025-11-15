@@ -4,27 +4,27 @@ import { Bot, Code, TrendingUp, Zap } from "lucide-react";
 const services = [
   {
     icon: Zap,
-    title: "Business Process Automation",
+    title: "Automatización de Procesos",
     description:
-      "Streamline operations and eliminate repetitive tasks with intelligent automation solutions tailored to your workflow.",
+      "Optimiza operaciones y elimina tareas repetitivas con soluciones de automatización inteligente adaptadas a tu flujo de trabajo.",
   },
   {
     icon: Bot,
-    title: "AI-Powered Solutions",
+    title: "Soluciones Potenciadas por IA",
     description:
-      "Harness the power of machine learning and AI to unlock insights, predict trends, and make data-driven decisions.",
+      "Aprovecha el poder del machine learning e IA para descubrir insights, predecir tendencias y tomar decisiones basadas en datos.",
   },
   {
     icon: Code,
-    title: "Custom Web Development",
+    title: "Desarrollo Web Personalizado",
     description:
-      "Build scalable, high-performance web applications with modern frameworks and cutting-edge technologies.",
+      "Construye aplicaciones web escalables y de alto rendimiento con frameworks modernos y tecnologías de vanguardia.",
   },
   {
     icon: TrendingUp,
-    title: "SEO & Digital Strategy",
+    title: "SEO y Estrategia Digital",
     description:
-      "Boost your online presence with comprehensive SEO optimization and strategic digital marketing campaigns.",
+      "Potencia tu presencia online con optimización SEO integral y campañas estratégicas de marketing digital.",
   },
 ];
 
@@ -67,10 +67,10 @@ const Services = () => {
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
-            Our <span className="gradient-text">Services</span>
+            Nuestros <span className="gradient-text">Servicios</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive solutions designed to accelerate your digital transformation journey.
+            Soluciones integrales diseñadas para acelerar tu transformación digital.
           </p>
         </div>
 

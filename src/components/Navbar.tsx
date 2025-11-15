@@ -16,10 +16,10 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Features", href: "#features" },
-    { name: "Technology", href: "#technology" },
-    { name: "Contact", href: "#contact" },
+    { name: "Servicios", href: "#services" },
+    { name: "Impacto", href: "#features" },
+    { name: "Automatización", href: "#automation" },
+    { name: "Contacto", href: "#contact" },
   ];
 
   return (
@@ -49,7 +49,7 @@ const Navbar = () => {
               </a>
             ))}
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 glow-effect">
-              Get Started
+              Comenzar
             </Button>
           </div>
 
@@ -77,7 +77,7 @@ const Navbar = () => {
                 </a>
               ))}
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90 w-full">
-                Get Started
+                Comenzar
               </Button>
             </div>
           </div>
