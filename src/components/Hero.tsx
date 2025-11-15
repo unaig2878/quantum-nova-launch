@@ -18,20 +18,20 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full">
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium">Innovation at Scale</span>
+            <span className="text-sm font-medium">Innovación a Escala</span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            Transform Your Business with
+            Transforma tu Negocio con
             <br />
-            <span className="gradient-text">Cutting-Edge Automation</span>
+            <span className="gradient-text">Automatización de Vanguardia</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-            AI-powered solutions and custom IT services that drive efficiency,
-            innovation, and growth for forward-thinking companies.
+            Soluciones potenciadas por IA y servicios IT personalizados que impulsan
+            eficiencia, innovación y crecimiento para empresas visionarias.
           </p>
 
           {/* CTA Buttons */}
@@ -40,7 +40,7 @@ const Hero = () => {
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 glow-effect text-lg px-8 group"
             >
-              Start Your Journey
+              Comienza tu Viaje
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
@@ -48,7 +48,7 @@ const Hero = () => {
               variant="outline"
               className="glass-card border-border hover:bg-primary/10 text-lg px-8"
             >
-              Explore Services
+              Explorar Servicios
             </Button>
           </div>
 
@@ -56,15 +56,15 @@ const Hero = () => {
           <div className="pt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-              <span>99.9% Uptime</span>
+              <span>99.9% Disponibilidad</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-              <span>24/7 Support</span>
+              <span>Soporte 24/7</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-              <span>ISO Certified</span>
+              <span>Certificación ISO</span>
             </div>
           </div>
         </div>
