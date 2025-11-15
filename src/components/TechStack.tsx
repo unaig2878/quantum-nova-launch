@@ -100,10 +100,10 @@ const TechStack = () => {
                 className={`glass-card rounded-2xl p-8 md:p-12 transition-all duration-700 hover:scale-[1.02] ${
                   visibleCards[index]
                     ? "opacity-100 translate-x-0"
-                    : "opacity-0 translate-x-full"
+                    : "opacity-0 translate-x-[100px]"
                 }`}
                 style={{
-                  transitionDelay: visibleCards[index] ? "0ms" : `${index * 200}ms`,
+                  transitionDelay: `${index * 200}ms`,
                 }}
               >
                 <div className="grid md:grid-cols-[auto_1fr] gap-8 items-start relative">
