@@ -46,6 +46,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               className="glass-card border-border hover:bg-primary/10 text-lg px-8"
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Explorar Servicios
             </Button>
@@ -70,7 +71,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-primary rounded-full flex items-start justify-center p-2">
           <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></div>
         </div>
