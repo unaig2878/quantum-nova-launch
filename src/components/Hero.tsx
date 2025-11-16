@@ -23,15 +23,14 @@ const Hero = () => {
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            Transforma tu Negocio con
+            <span className="gradient-text">Automatiza tus tareas repetitivas</span>
             <br />
-            <span className="gradient-text">Automatización de Vanguardia</span>
+            y céntrate en lo importante
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-            Soluciones potenciadas por IA y servicios IT personalizados que impulsan
-            eficiencia, innovación y crecimiento para empresas visionarias.
+            Recupera hasta 15 horas a la semana sin perder calidad en tus procesos.
           </p>
 
           {/* CTA Buttons */}
@@ -40,7 +39,7 @@ const Hero = () => {
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 glow-effect text-lg px-8 group"
             >
-              Comienza tu Viaje
+              Empieza ahora Gratis
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
