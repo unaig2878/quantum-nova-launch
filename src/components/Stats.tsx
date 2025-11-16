@@ -130,6 +130,9 @@ const Stats = () => {
                         background={{ fill: "hsl(var(--muted))" }}
                         dataKey="value"
                         cornerRadius={10}
+                        isAnimationActive={true}
+                        animationDuration={16}
+                        animationEasing="linear"
                       >
                         <Cell fill={metric.color} />
                       </RadialBar>
