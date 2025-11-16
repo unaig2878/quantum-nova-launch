@@ -8,6 +8,63 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Light theme base colors */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Neon cyan accent */
+    --primary: 190 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Purple secondary */
+    --secondary: 280 60% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 190 100% 50%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 190 100% 50%;
+
+    --radius: 1rem;
+
+    /* Custom gradients for light mode */
+    --gradient-primary: linear-gradient(135deg, hsl(190 100% 50%) 0%, hsl(280 60% 50%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(210 40% 98%) 0%, hsl(214 32% 91%) 100%);
+    --gradient-glow: radial-gradient(circle at center, hsl(190 100% 50% / 0.1) 0%, transparent 70%);
+    
+    /* Glass effect for light mode */
+    --glass-bg: hsl(0 0% 100% / 0.6);
+    --glass-border: hsl(190 100% 50% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 190 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 190 100% 50%;
+  }
+
+  .dark {
     /* Dark theme base colors */
     --background: 222 47% 5%;
     --foreground: 210 40% 98%;
@@ -39,20 +96,14 @@ All colors MUST be HSL.
     --input: 222 47% 15%;
     --ring: 190 100% 50%;
 
-    --radius: 1rem;
-
-    /* Custom gradients */
+    /* Custom gradients for dark mode */
     --gradient-primary: linear-gradient(135deg, hsl(190 100% 50%) 0%, hsl(280 60% 50%) 100%);
     --gradient-hero: linear-gradient(180deg, hsl(222 47% 5%) 0%, hsl(222 47% 8%) 100%);
     --gradient-glow: radial-gradient(circle at center, hsl(190 100% 50% / 0.15) 0%, transparent 70%);
     
-    /* Glass effect */
+    /* Glass effect for dark mode */
     --glass-bg: hsl(222 47% 12% / 0.4);
     --glass-border: hsl(190 100% 50% / 0.2);
-    
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 222 47% 8%;
     --sidebar-foreground: 210 40% 98%;
