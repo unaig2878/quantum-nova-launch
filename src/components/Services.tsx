@@ -88,22 +88,25 @@ const Services = () => {
                   isVisible ? "animate-slide-up opacity-100" : "opacity-0"
                 }`}
               >
-                <div className="flex flex-col h-full">
-                  {/* Icon */}
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors glow-effect">
-                    <Icon className="w-7 h-7 text-primary" />
+                <div className="grid grid-rows-[auto_1fr_auto] h-full">
+                  <div className="flex items-start mb-4">
+                    {/* Icon */}
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex-shrink-0 flex items-center justify-center mr-6 group-hover:bg-primary/20 transition-colors glow-effect">
+                      <Icon className="w-7 h-7 text-primary" />
+                    </div>
+                    {/* Title */}
+                    <h3 className="text-2xl font-bold group-hover:text-primary transition-colors flex-grow text-right">
+                      {service.title}
+                    </h3>
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
                   <p className="text-muted-foreground leading-relaxed">
                     {service.description}
                   </p>
 
                   {/* Hover Effect Line */}
-                  <div className="mt-6 h-1 w-0 bg-gradient-to-r from-primary to-secondary rounded-full group-hover:w-full transition-all duration-500"></div>
+                  <div className="mt-6 h-1 w-0 bg-gradient-to-r from-primary to-secondary rounded-full group-hover:w-full transition-all duration-500 self-end"></div>
                 </div>
               </div>
             );

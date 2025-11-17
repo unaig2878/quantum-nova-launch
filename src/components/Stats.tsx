@@ -1,36 +1,38 @@
 import { useEffect, useRef, useState } from "react";
-import { Cell, RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
+import { RadialBarChart, RadialBar, ResponsiveContainer, PolarAngleAxis } from "recharts";
 
 const metrics = [
-  { 
-    value: 70, 
+  {
+    value: 70,
     label: "Aumento en Productividad",
-    color: "hsl(190 100% 50%)",
+    color: "#00bcd4",
     description: "Más eficiencia en procesos"
   },
-  { 
-    value: 60, 
+  {
+    value: 60,
     label: "Reducción de Tiempo",
-    color: "hsl(280 60% 50%)",
+    color: "#9c27b0",
     description: "En tareas manuales"
   },
-  { 
-    value: 85, 
+  {
+    value: 85,
     label: "Satisfacción del Cliente",
-    color: "hsl(190 100% 50%)",
+    color: "#00bcd4",
     description: "Clientes satisfechos"
   },
-  { 
-    value: 50, 
+  {
+    value: 50,
     label: "Ahorro en Costos",
-    color: "hsl(280 60% 50%)",
+    color: "#9c27b0",
     description: "Costos operativos reducidos"
   },
 ];
 
 const Stats = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [animatedValues, setAnimatedValues] = useState<number[]>(Array(metrics.length).fill(0));
+  const [animatedValues, setAnimatedValues] = useState<number[]>(
+    metrics.map(() => 0)
+  );
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -39,8 +41,7 @@ const Stats = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !isVisible) {
             setIsVisible(true);
-            
-            // Animate progress bars
+
             metrics.forEach((metric, index) => {
               const duration = 2000;
               const increment = metric.value / (duration / 16);
@@ -78,7 +79,6 @@ const Stats = () => {
       ref={sectionRef}
       className="py-24 relative overflow-hidden"
     >
-      {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background"></div>
       <div className="absolute inset-0 opacity-20">
         <div className="absolute left-0 top-1/2 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float"></div>
@@ -86,7 +86,6 @@ const Stats = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
             Impacto <span className="gradient-text">Medible</span>
@@ -96,15 +95,20 @@ const Stats = () => {
           </p>
         </div>
 
-        {/* Metrics Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {metrics.map((metric, index) => {
+            // ✅ SOLUCIÓN: Dos barras concéntricas para simular el efecto
             const chartData = [
               {
-                name: metric.label,
-                value: animatedValues[index],
-                fill: metric.color,
+                name: 'background',
+                value: 100,
+                fill: '#e0e0e0'  // Color gris claro para el fondo
               },
+              {
+                name: 'progress',
+                value: animatedValues[index],
+                fill: metric.color
+              }
             ];
 
             return (
@@ -121,19 +125,20 @@ const Stats = () => {
                       cx="50%"
                       cy="50%"
                       innerRadius="70%"
-                      outerRadius="100%"
+                      outerRadius="90%"
                       data={chartData}
                       startAngle={90}
                       endAngle={-270}
                     >
+                      <PolarAngleAxis
+                        type="number"
+                        domain={[0, 100]}
+                        tick={false}
+                      />
                       <RadialBar
-                        background={{ fill: "hsl(var(--muted))" }}
                         dataKey="value"
                         cornerRadius={10}
-                        isAnimationActive={false}
-                      >
-                        <Cell fill={metric.color} />
-                      </RadialBar>
+                      />
                     </RadialBarChart>
                   </ResponsiveContainer>
                   <div className="absolute inset-0 flex items-center justify-center">
