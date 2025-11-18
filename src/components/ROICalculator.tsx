@@ -34,14 +34,14 @@ const ROICalculator = () => {
         <div className="max-w-5xl mx-auto">
           <div className="glass-card rounded-3xl p-8 md:p-12 space-y-12">
             {/* Hourly Rate Slider */}
-            <div className="space-y-6">
+            <div className="space-y-6 group">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-xl bg-primary/10">
+                  <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                     <DollarSign className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground">
+                    <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                       ¿Cuánto vale tu hora?
                     </h3>
                     <p className="text-sm text-muted-foreground">
@@ -50,7 +50,7 @@ const ROICalculator = () => {
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-bold gradient-text">
+                  <div className="text-3xl font-bold gradient-text group-hover:scale-110 transition-transform inline-block">
                     ${hourlyRate[0]}
                   </div>
                   <div className="text-sm text-muted-foreground">por hora</div>
@@ -71,14 +71,14 @@ const ROICalculator = () => {
             </div>
 
             {/* Hours Wasted Slider */}
-            <div className="space-y-6">
+            <div className="space-y-6 group">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-xl bg-secondary/10">
+                  <div className="p-3 rounded-xl bg-secondary/10 group-hover:bg-secondary/20 group-hover:scale-110 transition-all duration-300">
                     <Clock className="w-6 h-6 text-secondary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground">
+                    <h3 className="text-lg font-semibold text-foreground group-hover:text-secondary transition-colors">
                       ¿Cuántas horas pierdes en tareas repetitivas?
                     </h3>
                     <p className="text-sm text-muted-foreground">
@@ -87,7 +87,7 @@ const ROICalculator = () => {
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-bold gradient-text">
+                  <div className="text-3xl font-bold gradient-text group-hover:scale-110 transition-transform inline-block">
                     {hoursWasted[0]}h
                   </div>
                   <div className="text-sm text-muted-foreground">por semana</div>
@@ -111,17 +111,17 @@ const ROICalculator = () => {
             <div className="pt-8 border-t border-border">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Money Lost */}
-                <div className="relative group">
+                <div className="relative group hover:scale-105 transition-all duration-300 cursor-pointer">
                   <div className="absolute inset-0 bg-gradient-to-br from-destructive/20 to-destructive/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-                  <div className="relative glass-card rounded-2xl p-6 text-center space-y-3">
-                    <div className="w-12 h-12 mx-auto rounded-xl bg-destructive/10 flex items-center justify-center">
-                      <TrendingUp className="w-6 h-6 text-destructive rotate-180" />
+                  <div className="relative glass-card rounded-2xl p-6 text-center space-y-3 hover:border-destructive/30">
+                    <div className="w-12 h-12 mx-auto rounded-xl bg-destructive/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                      <TrendingUp className="w-6 h-6 text-destructive rotate-180 group-hover:scale-110 transition-transform" />
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground mb-1">
                         Pierdes al año
                       </div>
-                      <div className="text-3xl font-bold text-destructive">
+                      <div className="text-3xl font-bold text-destructive group-hover:scale-110 transition-transform inline-block">
                         ${yearlyLoss.toLocaleString()}
                       </div>
                     </div>
@@ -129,17 +129,17 @@ const ROICalculator = () => {
                 </div>
 
                 {/* Potential Savings */}
-                <div className="relative group">
+                <div className="relative group hover:scale-105 transition-all duration-300 cursor-pointer">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-                  <div className="relative glass-card rounded-2xl p-6 text-center space-y-3">
-                    <div className="w-12 h-12 mx-auto rounded-xl bg-primary/10 flex items-center justify-center">
-                      <Zap className="w-6 h-6 text-primary" />
+                  <div className="relative glass-card rounded-2xl p-6 text-center space-y-3 hover:border-primary/50">
+                    <div className="w-12 h-12 mx-auto rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                      <Zap className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground mb-1">
                         Podrías ahorrar
                       </div>
-                      <div className="text-3xl font-bold gradient-text">
+                      <div className="text-3xl font-bold gradient-text group-hover:scale-110 transition-transform inline-block">
                         ${potentialSavings.toLocaleString()}
                       </div>
                     </div>
@@ -147,17 +147,17 @@ const ROICalculator = () => {
                 </div>
 
                 {/* ROI Percentage */}
-                <div className="relative group">
+                <div className="relative group hover:scale-105 transition-all duration-300 cursor-pointer">
                   <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-secondary/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-                  <div className="relative glass-card rounded-2xl p-6 text-center space-y-3">
-                    <div className="w-12 h-12 mx-auto rounded-xl bg-secondary/10 flex items-center justify-center">
-                      <TrendingUp className="w-6 h-6 text-secondary" />
+                  <div className="relative glass-card rounded-2xl p-6 text-center space-y-3 hover:border-secondary/50">
+                    <div className="w-12 h-12 mx-auto rounded-xl bg-secondary/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                      <TrendingUp className="w-6 h-6 text-secondary group-hover:scale-110 transition-transform" />
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground mb-1">
                         Eficiencia ganada
                       </div>
-                      <div className="text-3xl font-bold text-secondary">
+                      <div className="text-3xl font-bold text-secondary group-hover:scale-110 transition-transform inline-block">
                         70%
                       </div>
                     </div>

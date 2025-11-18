@@ -18,22 +18,22 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="#services" className="text-muted-foreground hover:text-primary transition-colors hover:translate-x-1 inline-block duration-300">
                   Servicios
                 </a>
               </li>
               <li>
-                <a href="#features" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="#features" className="text-muted-foreground hover:text-primary transition-colors hover:translate-x-1 inline-block duration-300">
                   Impacto
                 </a>
               </li>
               <li>
-                <a href="#automation" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="#automation" className="text-muted-foreground hover:text-primary transition-colors hover:translate-x-1 inline-block duration-300">
                   Automatización
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors hover:translate-x-1 inline-block duration-300">
                   Contacto
                 </a>
               </li>
@@ -57,19 +57,19 @@ const Footer = () => {
             <div className="flex gap-4">
               <a
                 href="#"
-                className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
+                className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 hover:scale-110 transition-all duration-300 hover:rotate-12"
               >
                 <Twitter className="w-5 h-5 text-primary" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
+                className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 hover:scale-110 transition-all duration-300 hover:rotate-12"
               >
                 <Linkedin className="w-5 h-5 text-primary" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
+                className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 hover:scale-110 transition-all duration-300 hover:rotate-12"
               >
                 <Github className="w-5 h-5 text-primary" />
               </a>

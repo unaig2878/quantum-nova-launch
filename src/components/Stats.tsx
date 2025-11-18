@@ -95,7 +95,7 @@ const Stats = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-16">
           {metrics.map((metric, index) => {
             // ✅ SOLUCIÓN: Dos barras concéntricas para simular el efecto
             const chartData = [
@@ -156,6 +156,26 @@ const Stats = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center animate-fade-in">
+          <div className="glass-card rounded-3xl p-10 max-w-2xl mx-auto hover:border-primary/50 transition-all duration-500 hover:scale-105">
+            <div className="space-y-4">
+              <h3 className="text-2xl md:text-3xl font-bold">
+                ¿Te gustan estos <span className="gradient-text">Resultados</span>?
+              </h3>
+              <p className="text-muted-foreground">
+                Únete a las empresas que ya están transformando su forma de trabajar
+              </p>
+              <button
+                onClick={() => document.getElementById('roi')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold rounded-full hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-110 inline-block glow-effect"
+              >
+                Calcula tu Ahorro
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

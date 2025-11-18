@@ -16,8 +16,8 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20 text-center">
         <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full">
-            <Sparkles className="w-4 h-4 text-primary" />
+          <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full hover:scale-110 transition-transform duration-300 cursor-pointer hover:border-primary/50">
+            <Sparkles className="w-4 h-4 text-primary animate-pulse" />
             <span className="text-sm font-medium">Innovación a Escala</span>
           </div>
 
@@ -54,25 +54,27 @@ const Hero = () => {
 
           {/* Trust Indicators */}
           <div className="pt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-              <span>99.9% Disponibilidad</span>
+            <div className="flex items-center gap-2 hover:scale-110 transition-transform duration-300 cursor-pointer group">
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse group-hover:scale-150 transition-transform"></div>
+              <span className="group-hover:text-foreground transition-colors">99.9% Disponibilidad</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-              <span>Soporte 24/7</span>
+            <div className="flex items-center gap-2 hover:scale-110 transition-transform duration-300 cursor-pointer group">
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse group-hover:scale-150 transition-transform"></div>
+              <span className="group-hover:text-foreground transition-colors">Soporte 24/7</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-              <span>Certificación ISO</span>
+            <div className="flex items-center gap-2 hover:scale-110 transition-transform duration-300 cursor-pointer group">
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse group-hover:scale-150 transition-transform"></div>
+              <span className="group-hover:text-foreground transition-colors">Certificación ISO</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary rounded-full flex items-start justify-center p-2">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce hover:scale-125 transition-transform cursor-pointer"
+        onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+      >
+        <div className="w-6 h-10 border-2 border-primary rounded-full flex items-start justify-center p-2 hover:border-secondary transition-colors">
           <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></div>
         </div>
       </div>
