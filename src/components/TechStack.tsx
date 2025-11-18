@@ -108,7 +108,7 @@ const TechStack = () => {
               >
                 <div className="grid md:grid-cols-[auto_1fr] gap-8 items-start relative">
                   {/* Badge */}
-                  <div className="absolute top-0 right-0">
+                  <div className="absolute -top-5 right-0">
                     <span className="px-4 py-2 rounded-full bg-primary/20 text-primary text-sm font-medium border border-primary/30">
                       {process.badge}
                     </span>
