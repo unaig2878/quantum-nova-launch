@@ -97,7 +97,7 @@ const TechStack = () => {
               <div
                 key={index}
                 ref={(el) => (cardRefs.current[index] = el)}
-                className={`glass-card rounded-2xl p-8 md:p-12 transition-all duration-700 hover:scale-[1.02] ${
+                className={`glass-card rounded-2xl p-8 md:p-12 transition-all duration-700 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/10 ${
                   visibleCards[index]
                     ? "opacity-100 translate-x-0"
                     : "opacity-0 translate-x-[100px]"
@@ -117,18 +117,18 @@ const TechStack = () => {
                   {/* Left Column - Icon & Title */}
                   <div className="flex flex-col items-start gap-4 md:min-w-[280px]">
                     <div
-                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${process.color} flex items-center justify-center shadow-lg`}
+                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${process.color} flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}
                     >
-                      <Icon className="w-8 h-8 text-white" />
+                      <Icon className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">
                       {process.title}
                     </h3>
                   </div>
 
                   {/* Right Column - Description */}
                   <div className="md:pt-4">
-                    <p className="text-lg text-muted-foreground leading-relaxed">
+                    <p className="text-lg text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
                       {process.description}
                     </p>
                   </div>
@@ -136,6 +136,27 @@ const TechStack = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* CTA Section */}
+        <div className="mt-20 text-center animate-fade-in">
+          <div className="glass-card rounded-3xl p-12 max-w-3xl mx-auto relative overflow-hidden group hover:border-primary/50 transition-all duration-500 hover:scale-105">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative z-10 space-y-6">
+              <h3 className="text-3xl md:text-4xl font-bold">
+                ¿Cuál de estos <span className="gradient-text">Procesos</span> quieres automatizar?
+              </h3>
+              <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+                Hablemos de cómo implementar estas soluciones en tu empresa
+              </p>
+              <button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-10 py-4 bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold rounded-full hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-110 glow-effect"
+              >
+                Hablemos de tu Proyecto
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

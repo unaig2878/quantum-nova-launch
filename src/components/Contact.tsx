@@ -76,7 +76,7 @@ const Contact = () => {
 
               <Button
                 type="submit"
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow-effect text-lg py-6"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 glow-effect text-lg py-6 transition-all duration-300"
               >
                 Enviar Mensaje
               </Button>
@@ -92,8 +92,8 @@ const Contact = () => {
               </p>
 
               <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-4 group hover:translate-x-2 transition-transform duration-300">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                     <Mail className="w-5 h-5 text-primary" />
                   </div>
                   <div>
@@ -107,8 +107,8 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-4 group hover:translate-x-2 transition-transform duration-300">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <div>
@@ -122,8 +122,8 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-4 group hover:translate-x-2 transition-transform duration-300">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>

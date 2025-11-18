@@ -84,15 +84,15 @@ const Services = () => {
               <div
                 key={index}
                 ref={(el) => (cardsRef.current[index] = el)}
-                className={`glass-card rounded-2xl p-8 group hover:border-primary/50 transition-all duration-500 ${
+                className={`glass-card rounded-2xl p-8 group hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-2 ${
                   isVisible ? "animate-slide-up opacity-100" : "opacity-0"
                 }`}
               >
                 <div className="grid grid-rows-[auto_1fr_auto] h-full">
                   <div className="flex items-start mb-4">
                     {/* Icon */}
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex-shrink-0 flex items-center justify-center mr-6 group-hover:bg-primary/20 transition-colors glow-effect">
-                      <Icon className="w-7 h-7 text-primary" />
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex-shrink-0 flex items-center justify-center mr-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300 glow-effect">
+                      <Icon className="w-7 h-7 text-primary group-hover:rotate-12 transition-transform duration-300" />
                     </div>
                     {/* Title */}
                     <h3 className="text-2xl font-bold group-hover:text-primary transition-colors flex-grow text-right">
@@ -101,7 +101,7 @@ const Services = () => {
                   </div>
 
                   {/* Content */}
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
                     {service.description}
                   </p>
 
@@ -111,6 +111,27 @@ const Services = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* CTA Section */}
+        <div className="mt-20 text-center animate-fade-in">
+          <div className="glass-card rounded-3xl p-12 max-w-3xl mx-auto relative overflow-hidden group hover:border-primary/50 transition-all duration-500">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative z-10 space-y-6">
+              <h3 className="text-3xl md:text-4xl font-bold">
+                ¿Listo para <span className="gradient-text">Transformar</span> tu Negocio?
+              </h3>
+              <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+                Descubre cómo nuestras soluciones pueden llevar tu empresa al siguiente nivel
+              </p>
+              <button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-10 py-4 bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold rounded-full hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-110 glow-effect"
+              >
+                Agenda una Consulta Gratis
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
