@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
@@ -18,19 +21,19 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full hover:scale-110 transition-transform duration-300 cursor-pointer hover:border-primary/50">
             <Sparkles className="w-4 h-4 text-primary animate-pulse" />
-            <span className="text-sm font-medium">Innovación a Escala</span>
+            <span className="text-sm font-medium">{t("hero.badge")}</span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            <span className="gradient-text">Automatiza tus tareas repetitivas</span>
+            <span className="gradient-text">{t("hero.title")}</span>
             <br />
-            y céntrate en lo importante
+            {t("hero.subtitle")}
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-            Recupera hasta 15 horas a la semana sin perder calidad en tus procesos.
+            {t("hero.description")}
           </p>
 
           {/* CTA Buttons */}
@@ -39,7 +42,7 @@ const Hero = () => {
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 glow-effect text-lg px-8 group"
             >
-              Empieza ahora Gratis
+              {t("hero.cta1")}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
@@ -48,7 +51,7 @@ const Hero = () => {
               className="glass-card border-border hover:bg-primary/10 text-lg px-8"
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Explorar Servicios
+              {t("hero.cta2")}
             </Button>
           </div>
 
@@ -56,15 +59,15 @@ const Hero = () => {
           <div className="pt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
             <div className="flex items-center gap-2 hover:scale-110 transition-transform duration-300 cursor-pointer group">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse group-hover:scale-150 transition-transform"></div>
-              <span className="group-hover:text-foreground transition-colors">99.9% Disponibilidad</span>
+              <span className="group-hover:text-foreground transition-colors">{t("hero.trust1")}</span>
             </div>
             <div className="flex items-center gap-2 hover:scale-110 transition-transform duration-300 cursor-pointer group">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse group-hover:scale-150 transition-transform"></div>
-              <span className="group-hover:text-foreground transition-colors">Soporte 24/7</span>
+              <span className="group-hover:text-foreground transition-colors">{t("hero.trust2")}</span>
             </div>
             <div className="flex items-center gap-2 hover:scale-110 transition-transform duration-300 cursor-pointer group">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse group-hover:scale-150 transition-transform"></div>
-              <span className="group-hover:text-foreground transition-colors">Certificación ISO</span>
+              <span className="group-hover:text-foreground transition-colors">{t("hero.trust3")}</span>
             </div>
           </div>
         </div>

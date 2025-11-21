@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Slider } from "@/components/ui/slider";
-import { DollarSign, Clock, TrendingUp, Zap } from "lucide-react";
+import { Euro, Clock, TrendingUp, Zap } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ROICalculator = () => {
+  const { t } = useLanguage();
   const [hourlyRate, setHourlyRate] = useState([50]);
   const [hoursWasted, setHoursWasted] = useState([10]);
 
@@ -24,10 +26,10 @@ const ROICalculator = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
-            ¿Cuánto <span className="gradient-text">Pierdes</span> Cada Año?
+            {t("roi.title").split(" ")[0]} <span className="gradient-text">{t("roi.title").split(" ")[1]}</span> {t("roi.title").split(" ").slice(2).join(" ")}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Calcula el costo real de las tareas repetitivas y descubre tu potencial de ahorro
+            {t("roi.subtitle")}
           </p>
         </div>
 
@@ -38,22 +40,22 @@ const ROICalculator = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                    <DollarSign className="w-6 h-6 text-primary" />
+                    <Euro className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                      ¿Cuánto vale tu hora?
+                      {t("roi.hourly.title")}
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                      Define el valor de tu tiempo
+                      {t("roi.hourly.desc")}
                     </p>
                   </div>
                 </div>
                 <div className="text-right">
                   <div className="text-3xl font-bold gradient-text group-hover:scale-110 transition-transform inline-block">
-                    ${hourlyRate[0]}
+                    €{hourlyRate[0]}
                   </div>
-                  <div className="text-sm text-muted-foreground">por hora</div>
+                  <div className="text-sm text-muted-foreground">{t("roi.hourly.unit")}</div>
                 </div>
               </div>
               <Slider
@@ -65,8 +67,8 @@ const ROICalculator = () => {
                 className="w-full"
               />
               <div className="flex justify-between text-xs text-muted-foreground">
-                <span>$10/hr</span>
-                <span>$200/hr</span>
+                <span>€10/hr</span>
+                <span>€200/hr</span>
               </div>
             </div>
 
@@ -79,10 +81,10 @@ const ROICalculator = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-foreground group-hover:text-secondary transition-colors">
-                      ¿Cuántas horas pierdes en tareas repetitivas?
+                      {t("roi.hours.title")}
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                      Tiempo perdido por semana
+                      {t("roi.hours.desc")}
                     </p>
                   </div>
                 </div>
@@ -90,7 +92,7 @@ const ROICalculator = () => {
                   <div className="text-3xl font-bold gradient-text group-hover:scale-110 transition-transform inline-block">
                     {hoursWasted[0]}h
                   </div>
-                  <div className="text-sm text-muted-foreground">por semana</div>
+                  <div className="text-sm text-muted-foreground">{t("roi.hours.unit")}</div>
                 </div>
               </div>
               <Slider
@@ -119,10 +121,10 @@ const ROICalculator = () => {
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground mb-1">
-                        Pierdes al año
+                        {t("roi.loss")}
                       </div>
                       <div className="text-3xl font-bold text-destructive group-hover:scale-110 transition-transform inline-block">
-                        ${yearlyLoss.toLocaleString()}
+                        €{yearlyLoss.toLocaleString()}
                       </div>
                     </div>
                   </div>
@@ -137,10 +139,10 @@ const ROICalculator = () => {
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground mb-1">
-                        Podrías ahorrar
+                        {t("roi.savings")}
                       </div>
                       <div className="text-3xl font-bold gradient-text group-hover:scale-110 transition-transform inline-block">
-                        ${potentialSavings.toLocaleString()}
+                        €{potentialSavings.toLocaleString()}
                       </div>
                     </div>
                   </div>
@@ -155,7 +157,7 @@ const ROICalculator = () => {
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground mb-1">
-                        Eficiencia ganada
+                        {t("roi.efficiency")}
                       </div>
                       <div className="text-3xl font-bold text-secondary group-hover:scale-110 transition-transform inline-block">
                         70%
@@ -167,7 +169,7 @@ const ROICalculator = () => {
 
               <div className="mt-8 text-center">
                 <p className="text-sm text-muted-foreground mb-4">
-                  La automatización podría recuperar el 70% de ese tiempo perdido
+                  {t("roi.info")}
                 </p>
                 <button
                   onClick={() => {
@@ -176,7 +178,7 @@ const ROICalculator = () => {
                   }}
                   className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105"
                 >
-                  Comienza a Ahorrar Ahora
+                  {t("roi.cta")}
                 </button>
               </div>
             </div>

@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, X, Moon, Sun, Languages } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,10 +20,10 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Servicios", href: "#services" },
-    { name: "Impacto", href: "#features" },
-    { name: "Automatización", href: "#automation" },
-    { name: "Contacto", href: "#contact" },
+    { name: t("nav.services"), href: "#services" },
+    { name: t("nav.features"), href: "#features" },
+    { name: t("nav.automation"), href: "#automation" },
+    { name: t("nav.contact"), href: "#contact" },
   ];
 
   return (
@@ -53,18 +55,35 @@ const Navbar = () => {
             <Button
               variant="ghost"
               size="icon"
+              onClick={() => setLanguage(language === "es" ? "en" : "es")}
+              className="text-foreground"
+            >
+              <Languages size={18} />
+              <span className="ml-1 text-xs font-medium">{language.toUpperCase()}</span>
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="text-foreground"
             >
               {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 glow-effect">
-              Comenzar
-            </Button>
+          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 glow-effect">
+            {t("nav.getStarted")}
+          </Button>
           </div>
 
           {/* Mobile Menu Button and Theme Toggle */}
-          <div className="md:hidden flex items-center gap-4">
+          <div className="md:hidden flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setLanguage(language === "es" ? "en" : "es")}
+              className="text-foreground"
+            >
+              <Languages size={18} />
+            </Button>
             <Button
               variant="ghost"
               size="icon"
@@ -97,7 +116,7 @@ const Navbar = () => {
                 </a>
               ))}
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90 w-full">
-                Comenzar
+                {t("nav.getStarted")}
               </Button>
             </div>
           </div>

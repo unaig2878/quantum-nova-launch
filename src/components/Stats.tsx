@@ -1,39 +1,39 @@
 import { useEffect, useRef, useState } from "react";
 import { RadialBarChart, RadialBar, ResponsiveContainer, PolarAngleAxis } from "recharts";
-
-const metrics = [
-  {
-    value: 70,
-    label: "Aumento en Productividad",
-    color: "#00bcd4",
-    description: "Más eficiencia en procesos"
-  },
-  {
-    value: 60,
-    label: "Reducción de Tiempo",
-    color: "#9c27b0",
-    description: "En tareas manuales"
-  },
-  {
-    value: 85,
-    label: "Satisfacción del Cliente",
-    color: "#00bcd4",
-    description: "Clientes satisfechos"
-  },
-  {
-    value: 50,
-    label: "Ahorro en Costos",
-    color: "#9c27b0",
-    description: "Costos operativos reducidos"
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Stats = () => {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
-  const [animatedValues, setAnimatedValues] = useState<number[]>(
-    metrics.map(() => 0)
-  );
+  const [animatedValues, setAnimatedValues] = useState<number[]>([0, 0, 0, 0]);
   const sectionRef = useRef<HTMLElement>(null);
+
+  const metrics = [
+    {
+      value: 70,
+      label: t("stats.productivity"),
+      color: "#00bcd4",
+      description: t("stats.productivity.desc")
+    },
+    {
+      value: 60,
+      label: t("stats.time"),
+      color: "#9c27b0",
+      description: t("stats.time.desc")
+    },
+    {
+      value: 85,
+      label: t("stats.satisfaction"),
+      color: "#00bcd4",
+      description: t("stats.satisfaction.desc")
+    },
+    {
+      value: 50,
+      label: t("stats.savings"),
+      color: "#9c27b0",
+      description: t("stats.savings.desc")
+    },
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -88,21 +88,20 @@ const Stats = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
-            Impacto <span className="gradient-text">Medible</span>
+            {t("stats.title").split(" ")[0]} <span className="gradient-text">{t("stats.title").split(" ")[1]}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Resultados reales que transforman tu negocio con automatización inteligente.
+            {t("stats.subtitle")}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-16">
           {metrics.map((metric, index) => {
-            // ✅ SOLUCIÓN: Dos barras concéntricas para simular el efecto
             const chartData = [
               {
                 name: 'background',
                 value: 100,
-                fill: '#e0e0e0'  // Color gris claro para el fondo
+                fill: '#e0e0e0'
               },
               {
                 name: 'progress',
@@ -163,16 +162,16 @@ const Stats = () => {
           <div className="glass-card rounded-3xl p-10 max-w-2xl mx-auto hover:border-primary/50 transition-all duration-500 hover:scale-105">
             <div className="space-y-4">
               <h3 className="text-2xl md:text-3xl font-bold">
-                ¿Te gustan estos <span className="gradient-text">Resultados</span>?
+                {t("stats.cta.title").split(" ")[0]} <span className="gradient-text">{t("stats.cta.title").split(" ")[3]}</span> {t("stats.cta.title").split(" ").slice(4).join(" ")}
               </h3>
               <p className="text-muted-foreground">
-                Únete a las empresas que ya están transformando su forma de trabajar
+                {t("stats.cta.desc")}
               </p>
               <button
                 onClick={() => document.getElementById('roi')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold rounded-full hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-110 inline-block glow-effect"
               >
-                Calcula tu Ahorro
+                {t("stats.cta.button")}
               </button>
             </div>
           </div>

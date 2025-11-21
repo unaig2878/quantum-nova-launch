@@ -1,36 +1,34 @@
 import { useEffect, useRef, useState } from "react";
 import { Bot, Code, TrendingUp, Zap } from "lucide-react";
-
-const services = [
-  {
-    icon: Zap,
-    title: "Automatización de Procesos",
-    description:
-      "Optimiza operaciones y elimina tareas repetitivas con soluciones de automatización inteligente adaptadas a tu flujo de trabajo.",
-  },
-  {
-    icon: Bot,
-    title: "Soluciones Potenciadas por IA",
-    description:
-      "Aprovecha el poder del machine learning e IA para descubrir insights, predecir tendencias y tomar decisiones basadas en datos.",
-  },
-  {
-    icon: Code,
-    title: "Desarrollo Web Personalizado",
-    description:
-      "Construye aplicaciones web escalables y de alto rendimiento con frameworks modernos y tecnologías de vanguardia.",
-  },
-  {
-    icon: TrendingUp,
-    title: "SEO y Estrategia Digital",
-    description:
-      "Potencia tu presencia online con optimización SEO integral y campañas estratégicas de marketing digital.",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { t } = useLanguage();
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  const services = [
+    {
+      icon: Zap,
+      title: t("services.automation"),
+      description: t("services.automation.desc"),
+    },
+    {
+      icon: Bot,
+      title: t("services.ai"),
+      description: t("services.ai.desc"),
+    },
+    {
+      icon: Code,
+      title: t("services.web"),
+      description: t("services.web.desc"),
+    },
+    {
+      icon: TrendingUp,
+      title: t("services.seo"),
+      description: t("services.seo.desc"),
+    },
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -67,10 +65,10 @@ const Services = () => {
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
-            Nuestros <span className="gradient-text">Servicios</span>
+            {t("services.title").split(" ")[0]} <span className="gradient-text">{t("services.title").split(" ")[1]}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Soluciones integrales diseñadas para acelerar tu transformación digital.
+            {t("services.subtitle")}
           </p>
         </div>
 
@@ -119,16 +117,16 @@ const Services = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative z-10 space-y-6">
               <h3 className="text-3xl md:text-4xl font-bold">
-                ¿Listo para <span className="gradient-text">Transformar</span> tu Negocio?
+                {t("services.cta.title").split(" ")[0]} <span className="gradient-text">{t("services.cta.title").split(" ")[2]}</span> {t("services.cta.title").split(" ").slice(3).join(" ")}
               </h3>
               <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-                Descubre cómo nuestras soluciones pueden llevar tu empresa al siguiente nivel
+                {t("services.cta.desc")}
               </p>
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-10 py-4 bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold rounded-full hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-110 glow-effect"
               >
-                Agenda una Consulta Gratis
+                {t("services.cta.button")}
               </button>
             </div>
           </div>
