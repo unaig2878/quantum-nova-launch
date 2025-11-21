@@ -1,5 +1,6 @@
 import { DollarSign, TrendingUp, Users, Headset } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const processes = [
   {
@@ -37,6 +38,7 @@ const processes = [
 ];
 
 const TechStack = () => {
+  const { t } = useLanguage();
   const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false, false, false]);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -144,16 +146,16 @@ const TechStack = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative z-10 space-y-6">
               <h3 className="text-3xl md:text-4xl font-bold">
-                ¿Cuál de estos <span className="gradient-text">Procesos</span> quieres automatizar?
+                {t("tech.cta.title")}
               </h3>
               <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-                Hablemos de cómo implementar estas soluciones en tu empresa
+                {t("tech.cta.desc")}
               </p>
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-10 py-4 bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold rounded-full hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-110 glow-effect"
               >
-                Hablemos de tu Proyecto
+                {t("tech.cta.button")}
               </button>
             </div>
           </div>

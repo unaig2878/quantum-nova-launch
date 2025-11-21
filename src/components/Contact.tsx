@@ -3,11 +3,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { toast } from "sonner";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("¡Mensaje enviado! Te responderemos pronto.");
+    toast.success(t("contact.form.success"));
   };
 
   return (
@@ -24,10 +27,10 @@ const Contact = () => {
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
-            Hablemos <span className="gradient-text">Contigo</span>
+            {t("contact.title").split(" ")[0]} <span className="gradient-text">{t("contact.title").split(" ")[1]}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            ¿Listo para transformar tu negocio? Contacta con nuestro equipo de expertos.
+            {t("contact.subtitle")}
           </p>
         </div>
 
@@ -37,12 +40,12 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium">
-                  Nombre Completo
+                  {t("contact.form.name")}
                 </label>
                 <Input
                   id="name"
                   type="text"
-                  placeholder="Juan Pérez"
+                  placeholder={t("contact.form.placeholder.name")}
                   required
                   className="bg-background/50 border-border focus:border-primary transition-colors"
                 />
@@ -50,12 +53,12 @@ const Contact = () => {
 
               <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-medium">
-                  Correo Electrónico
+                  {t("contact.form.email")}
                 </label>
                 <Input
                   id="email"
                   type="email"
-                  placeholder="juan@ejemplo.com"
+                  placeholder={t("contact.form.placeholder.email")}
                   required
                   className="bg-background/50 border-border focus:border-primary transition-colors"
                 />
@@ -63,11 +66,11 @@ const Contact = () => {
 
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium">
-                  Mensaje
+                  {t("contact.form.message")}
                 </label>
                 <Textarea
                   id="message"
-                  placeholder="Cuéntanos sobre tu proyecto..."
+                  placeholder={t("contact.form.placeholder.message")}
                   rows={5}
                   required
                   className="bg-background/50 border-border focus:border-primary transition-colors resize-none"
@@ -78,7 +81,7 @@ const Contact = () => {
                 type="submit"
                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 glow-effect text-lg py-6 transition-all duration-300"
               >
-                Enviar Mensaje
+                {t("contact.form.submit")}
               </Button>
             </form>
           </div>
@@ -86,9 +89,9 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-8">
             <div className="glass-card rounded-2xl p-8 space-y-6">
-              <h3 className="text-2xl font-bold">Ponte en Contacto</h3>
+              <h3 className="text-2xl font-bold">{t("contact.info.title")}</h3>
               <p className="text-muted-foreground">
-                Estamos aquí para ayudarte a lograr tus objetivos de transformación digital. ¡Contáctanos hoy!
+                {t("contact.info.desc")}
               </p>
 
               <div className="space-y-4">
@@ -97,7 +100,7 @@ const Contact = () => {
                     <Mail className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <div className="font-medium mb-1">Email</div>
+                    <div className="font-medium mb-1">{t("contact.info.email")}</div>
                     <a
                       href="mailto:contacto@quantumnova.com"
                       className="text-muted-foreground hover:text-primary transition-colors"
@@ -112,7 +115,7 @@ const Contact = () => {
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <div className="font-medium mb-1">Teléfono</div>
+                    <div className="font-medium mb-1">{t("contact.info.phone")}</div>
                     <a
                       href="tel:+34555123456"
                       className="text-muted-foreground hover:text-primary transition-colors"
@@ -127,11 +130,11 @@ const Contact = () => {
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <div className="font-medium mb-1">Ubicación</div>
+                    <div className="font-medium mb-1">{t("contact.info.location")}</div>
                     <p className="text-muted-foreground">
-                      Madrid, España
+                      {t("contact.info.location.address")}
                       <br />
-                      Calle Tecnología 123
+                      {t("contact.info.location.street")}
                     </p>
                   </div>
                 </div>
