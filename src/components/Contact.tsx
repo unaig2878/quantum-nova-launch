@@ -2,15 +2,20 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { toast } from "sonner";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
   const { t } = useLanguage();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success(t("contact.form.success"));
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+    
+    const mailtoLink = `mailto:info@quantumnovaagency.com?subject=Contacto desde web - ${name}&body=Nombre: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMensaje:%0D%0A${message}`;
+    window.location.href = mailtoLink;
   };
 
   return (
@@ -44,6 +49,7 @@ const Contact = () => {
                 </label>
                 <Input
                   id="name"
+                  name="name"
                   type="text"
                   placeholder={t("contact.form.placeholder.name")}
                   required
@@ -57,6 +63,7 @@ const Contact = () => {
                 </label>
                 <Input
                   id="email"
+                  name="email"
                   type="email"
                   placeholder={t("contact.form.placeholder.email")}
                   required
@@ -70,6 +77,7 @@ const Contact = () => {
                 </label>
                 <Textarea
                   id="message"
+                  name="message"
                   placeholder={t("contact.form.placeholder.message")}
                   rows={5}
                   required
